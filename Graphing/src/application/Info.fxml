@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InfoControls">
+   <top>
+      <StackPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="quitB" mnemonicParsing="false" onAction="#close" onMouseEntered="#quitEntered" onMouseExited="#quitExited" onMousePressed="#quitPressed" onMouseReleased="#quitReleased" style="-fx-background-color: White;" text="Close Window" translateX="50.0" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </StackPane>
+   </top>
+   <left>
+      <StackPane prefHeight="5.0" prefWidth="50.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <StackPane prefHeight="120.0" prefWidth="227.0" style="-fx-background-color: Black; -fx-border-color: LIGHTBLUE; -fx-border-width: 3;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To use the graphing calculator:" translateX="10.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fx:id="_helpText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the add button to add graph objects, the remove button to" translateX="10.0" translateY="20.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="remove them, and edit to overwrite them" translateX="10.0" translateY="40.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="For example, y=4x+1 would add a line with slope 4 and y-int 1" translateX="10.0" translateY="60.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To edit existing objects, enter the object's number and a new equation" translateX="10.0" translateY="80.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="For example, 2: 3x-4y=10 would overwrite line 2 with a line of the new equation" translateX="10.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the options button to change view size or clear the graph" translateX="10.0" translateY="160.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="For example, -10,20 x -10, 20 would set the graph's left bound to -10, right bound to 20" translateX="10.0" translateY="180.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="lower bound to -10, and upper bound to 20" translateX="10.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="You can remove objects with equation or number, so removing x+y=3 would remove" translateX="10.0" translateY="120.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="any line with that equation. Removing 3 would remove line 3" translateX="10.0" translateY="140.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="You can also scroll to zoom" translateX="10.0" translateY="220.0" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+   </center>
+   <right>
+      <StackPane prefHeight="150.0" prefWidth="50.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <StackPane prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

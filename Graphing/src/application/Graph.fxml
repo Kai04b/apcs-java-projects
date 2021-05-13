@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="helpB" mnemonicParsing="false" onAction="#showInfo" onMouseEntered="#helpEntered" onMouseExited="#helpExited" onMousePressed="#helpPressed" onMouseReleased="#helpReleased" style="-fx-background-color: White;" text="Help" translateX="60.0" StackPane.alignment="CENTER_LEFT" />
+            <Button fx:id="quitB" mnemonicParsing="false" onAction="#quit" onMouseEntered="#quitEntered" onMouseExited="#quitExited" onMousePressed="#quitPressed" onMouseReleased="#quitReleased" style="-fx-background-color: White;" text="Quit" translateX="10.0" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </Button>
+         </children></StackPane>
+   </top>
+   <left>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: Black; -fx-border-color: LIGHTBLUE; -fx-border-width: 3;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="_infoText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateY="40.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Helvetica" size="16.0" />
+               </font>
+            </Text>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" translateY="75.0">
+               <children>
+                  <TextField fx:id="_input" maxWidth="200.0" />
+                  <MenuButton fx:id="add" mnemonicParsing="false" onMouseEntered="#addEntered" onMouseExited="#addExited" onMouseReleased="#addReleased" style="-fx-background-color: White;" text="Add">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#createLineStandard" text="Line (Ax + By = C)" />
+                      <MenuItem mnemonicParsing="false" onAction="#createLineSlope" text="Line (y = mx + b)" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#createPoint" text="Point (x, y)" />
+                    </items>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton fx:id="remove" mnemonicParsing="false" onMouseEntered="#removeEntered" onMouseExited="#removeExited" onMouseReleased="#removeReleased" style="-fx-background-color: White;" text="Remove">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#removeLineStandard" text="Line (Ax + By = C) or line#" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeLineSlope" text="Line (y = mx + b) or line#" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#removePoint" text="Point (x, y) or point#" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton fx:id="edit" mnemonicParsing="false" onMouseEntered="#editEntered" onMouseExited="#editExited" onMouseReleased="#editReleased" style="-fx-background-color: White;" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#replaceLineStandard" text="Line (line# : Ax + By = C)" />
+                        <MenuItem mnemonicParsing="false" onAction="#replaceLineSlope" text="Line (line#:y = mx + b)" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#replacePoint" text="Point (point#:x, y)" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton fx:id="options" mnemonicParsing="false" onMouseEntered="#optionsEntered" onMouseExited="#optionsExited" onMouseReleased="#optionsReleased" style="-fx-background-color: White;" text="Options">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#changeDimensions" text="Change View Dimensions (Left, Right x  Bottom, Top)" />
+                        <MenuItem mnemonicParsing="false" onAction="#clear" text="Clear Graph" />
+                    </items>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </HBox>
+            <ListView fx:id="_lineLV" prefHeight="200.0" prefWidth="200.0" translateX="-50.0" translateY="50.0">
+               <StackPane.margin>
+                  <Insets bottom="75.0" left="75.0" right="250.0" top="100.0" />
+               </StackPane.margin>
+            </ListView>
+            <ListView fx:id="_pointLV" prefHeight="200.0" prefWidth="200.0" translateX="50.0" translateY="50.0">
+               <StackPane.margin>
+                  <Insets bottom="75.0" left="250.0" right="75.0" top="100.0" />
+               </StackPane.margin>
+            </ListView>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Lines" translateX="-150.0" translateY="-65.0">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" translateX="150.0" translateY="-65.0">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+   </left>
+   <center>
+      <StackPane fx:id="_graph" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: White;" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="50.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1000.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
