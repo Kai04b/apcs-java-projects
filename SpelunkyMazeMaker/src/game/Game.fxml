@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="_mainPane" onKeyPressed="#keyPressed" onKeyReleased="#eReleased" onMouseMoved="#resize" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.Controls">
+   <left>
+      <VBox fx:id="_left" alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="150.0" spacing="40.0" style="-fx-background-color: Black; -fx-background-image: url(game/gameleft3.png);" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="_quit" mnemonicParsing="false" onAction="#quitClicked" style="-fx-background-color: White;" text="Quit">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font></Button>
+            <Button fx:id="_resetAllButton" mnemonicParsing="false" onAction="#resetAllClicked" style="-fx-background-color: White;" text="Reset All">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font></Button>
+            <Button fx:id="_resetEditButton" mnemonicParsing="false" onAction="#resetEditClicked" style="-fx-background-color: White;" text="Reset and Edit">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="_resetPlayButton" mnemonicParsing="false" onAction="#resetPlayClicked" style="-fx-background-color: White;" text="Reset and Play">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="_playButton" alignment="CENTER" mnemonicParsing="false" onAction="#playGameClicked" style="-fx-background-color: WHITE;" text="Play Game">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#showInfo" style="-fx-background-color: White;" text="Info">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding></VBox>
+   </left>
+   <bottom>
+      <StackPane prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: black; -fx-background-image: url(game/gamebot2.png);" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="_gameLabel1" style="-fx-background-color: Black;" textFill="WHITE" translateY="20.0">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="_gameLabel2" opacity="0.5" style="-fx-background-color: Black;" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="_gameLabel3" opacity="0.25" style="-fx-background-color: Black;" textFill="WHITE" translateY="-20.0">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </StackPane>
+   </bottom>
+   <top>
+      <StackPane fx:id="_top" prefHeight="50.0" prefWidth="753.0" style="-fx-background-color: Black; -fx-background-image: url(game/gametop2.png);" BorderPane.alignment="CENTER" />
+   </top>
+   <right>
+      <StackPane fx:id="_right" prefHeight="500.0" prefWidth="150.0" style="-fx-background-image: url(game/gameright2.png); -fx-background-color: Black;" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="_slider" majorTickUnit="1.0" max="8.0" minorTickCount="0" onMouseClicked="#sliderMoved" onMouseDragged="#sliderMoved" orientation="VERTICAL" showTickMarks="true" snapToTicks="true" translateX="-40.0" translateY="-20.0" value="1.0">
+               <padding>
+                  <Insets bottom="50.0" top="50.0" />
+               </padding></Slider>
+            <VBox fx:id="_sliderBox" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" translateX="50.0" translateY="-20.0" StackPane.alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="_lab9" style="-fx-background-color: Black;" text="Torch" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab8" style="-fx-background-color: Black;" text="Locked Door" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab7" style="-fx-background-color: Black;" text="Key" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab6" style="-fx-background-color: Black;" text="Rock" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab5" style="-fx-background-color: Black;" text="Snake" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab4" style="-fx-background-color: Black;" text="Exit" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab3" style="-fx-background-color: Black;" text="Player" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab2" style="-fx-background-color: Black;" text="Wall" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_lab1" style="-fx-background-color: Black;" text="Path" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <CheckBox fx:id="_darkBox" mnemonicParsing="false" onAction="#darkChecked" style="-fx-background-color: Black;" text="Dark " textFill="WHITE" translateY="-10.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </StackPane>
+   </right>
+</BorderPane>
