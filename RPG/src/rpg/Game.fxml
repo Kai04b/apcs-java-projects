@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpg.Controller">
+   <center>
+      <StackPane fx:id="_center" prefHeight="500.0" prefWidth="750.0" style="-fx-border-color: Orange; -fx-border-width: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="_moveB1" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#moveB1Entered" onMouseExited="#moveB1Exited" onMousePressed="#moveB1Pressed" onMouseReleased="#moveB1Released" scaleX="2.0" scaleY="2.0" style="-fx-background-color: White; -fx-border-color: Black;" text="Rock" translateX="-200.0" translateY="-25.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="_moveL1" alignment="CENTER" text="Blunt" translateX="-200.0" translateY="15.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="_moveB2" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#moveB2Entered" onMouseExited="#moveB2Exited" onMousePressed="#moveB2Pressed" onMouseReleased="#moveB2Released" scaleX="2.0" scaleY="2.0" style="-fx-background-color: White; -fx-border-color: Black;" text="Rock" translateY="-25.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="_moveB3" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#moveB3Entered" onMouseExited="#moveB3Exited" onMousePressed="#moveB3Pressed" onMouseReleased="#moveB3Released" scaleX="2.0" scaleY="2.0" style="-fx-background-color: White; -fx-border-color: Black;" text="Rock" translateX="200.0" translateY="-25.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="_enemyB1" contentDisplay="CENTER" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" style="-fx-background-color: White; -fx-border-color: Black; -fx-border-style: dashed;" text="Rock" translateX="-200.0" translateY="10.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="_enemyB2" contentDisplay="CENTER" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" style="-fx-background-color: White; -fx-border-color: Black; -fx-border-style: dashed;" text="Rock" translateY="10.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="_enemyB3" contentDisplay="CENTER" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" style="-fx-background-color: White; -fx-border-color: Black; -fx-border-style: dashed;" text="Rock" translateX="200.0" translateY="10.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="_enemyL3" alignment="CENTER" text="Blunt" translateX="200.0" translateY="60.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="_enemyL2" alignment="CENTER" text="Blunt" translateY="60.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="_enemyL1" alignment="CENTER" text="Blunt" translateX="-200.0" translateY="60.0" StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="_moveL3" alignment="CENTER" text="Blunt" translateX="200.0" translateY="15.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="_moveL2" alignment="CENTER" text="Blunt" translateY="15.0" StackPane.alignment="BOTTOM_CENTER">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Text fx:id="_gameText" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="oiwfh[ [qiwfn obwef[o b">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="_eSpriteIV" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT" />
+            <ImageView fx:id="_pSpriteIV" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+         </padding>
+      </StackPane>
+   </center>
+   <top>
+      <StackPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="_quitB" mnemonicParsing="false" onAction="#quitPressed" onMouseEntered="#quitEntered" onMouseExited="#quitExited" onMousePressed="#quitPressed" onMouseReleased="#quitReleased" style="-fx-background-color: Black; -fx-border-color: White;" text="Quit" textFill="WHITE" translateX="50.0" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="219.0" width="200.0" StackPane.alignment="CENTER_LEFT" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="2.0" translateX="-220.0" width="200.0" StackPane.alignment="CENTER_RIGHT" />
+            <Rectangle fx:id="_eHealthR" arcHeight="5.0" arcWidth="5.0" fill="RED" height="40.0" stroke="RED" strokeType="INSIDE" translateX="220.0" width="200.0" StackPane.alignment="CENTER_LEFT" />
+            <Rectangle fx:id="_eChargeR" arcHeight="5.0" arcWidth="5.0" fill="ROYALBLUE" height="40.0" stroke="ROYALBLUE" strokeType="INSIDE" translateX="-220.0" width="200.0" StackPane.alignment="CENTER_RIGHT" />
+            <Label fx:id="_currEncounterL" text="encounter" textFill="WHITE" translateX="-110.0" StackPane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="_eHealthL" style="-fx-background-color: Red;" text=" Health " textFill="WHITE" translateX="160.0" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="_eHealthIV" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="200.0" StackPane.alignment="CENTER_LEFT" />
+            <ImageView fx:id="_eSpecialIV" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-200.0" StackPane.alignment="CENTER_RIGHT" />
+            <Label fx:id="_enemyNameL" text="enemyName" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="_resetB" mnemonicParsing="false" onMouseEntered="#resetEntered" onMouseExited="#resetExited" onMousePressed="#resetPressed" onMouseReleased="#resetReleased" style="-fx-background-color: Black; -fx-border-color: White;" text="Reset" textFill="WHITE" translateX="-50.0" StackPane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+         </children></StackPane>
+   </top>
+   <left>
+      <StackPane prefHeight="150.0" prefWidth="50.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <StackPane prefHeight="150.0" prefWidth="50.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <StackPane prefHeight="50.0" prefWidth="850.0" style="-fx-background-color: Black;" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="220.0" width="200.0" StackPane.alignment="CENTER_LEFT" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="40.0" stroke="ROYALBLUE" strokeType="INSIDE" strokeWidth="2.0" translateX="-220.0" width="200.0" StackPane.alignment="CENTER_RIGHT" />
+            <Rectangle fx:id="_pHealthR" arcHeight="5.0" arcWidth="5.0" fill="RED" height="40.0" stroke="RED" strokeType="INSIDE" translateX="220.0" width="200.0" StackPane.alignment="CENTER_LEFT" />
+            <Rectangle fx:id="_pChargeR" arcHeight="5.0" arcWidth="5.0" fill="ROYALBLUE" height="40.0" nodeOrientation="RIGHT_TO_LEFT" stroke="ROYALBLUE" strokeType="INSIDE" translateX="-220.0" width="200.0" StackPane.alignment="CENTER_RIGHT" />
+            <Label fx:id="_pHealthL" style="-fx-background-color: Red;" text=" Health " textFill="WHITE" translateX="160.0" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="_specialB" mnemonicParsing="false" onMouseEntered="#specialEntered" onMouseExited="#specialExited" onMousePressed="#specialPressed" onMouseReleased="#specialReleased" style="-fx-background-color: Black; -fx-border-color: White;" text="Special" textFill="WHITE" translateX="-120.0" StackPane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="_continueB" mnemonicParsing="false" onMouseEntered="#continueEntered" onMouseExited="#continueExited" onMousePressed="#continuePressed" onMouseReleased="#continueReleased" style="-fx-background-color: Black; -fx-border-color: White;" text="Continue" textFill="WHITE" translateX="-10.0" visible="false" StackPane.alignment="CENTER">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="_pHealthIV" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="200.0" StackPane.alignment="CENTER_LEFT" />
+            <ImageView fx:id="_pSpecialIV" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-200.0" StackPane.alignment="CENTER_RIGHT" />
+            <Button fx:id="_skipB" mnemonicParsing="false" onMouseEntered="#skipEntered" onMouseExited="#skipExited" onMousePressed="#skipPressed" onMouseReleased="#skipReleased" style="-fx-background-color: Black; -fx-border-color: White;" text="Skip Tutorial" textFill="WHITE" translateX="20.0" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="Futura Medium" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="_buyB" mnemonicParsing="false" onMouseEntered="#buyEntered" onMouseExited="#buyExited" onMousePressed="#buyPressed" onMouseReleased="#buyReleased" style="-fx-background-color: Black; -fx-border-color: White;" text="Buy Health" textFill="WHITE" translateX="-10.0" StackPane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </Button>
+         </children></StackPane>
+   </bottom>
+</BorderPane>
