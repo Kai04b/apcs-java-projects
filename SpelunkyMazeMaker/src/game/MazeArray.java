@@ -68,12 +68,27 @@ public class MazeArray {
 		}
 	}
 	
+	/**
+	 * Set a given index in the array to a specific Space enum
+	 * 
+	 * @param e		Space enum to change the index
+	 * @param row 	Row of space to change
+	 * @param col 	Column of space to change
+	 */
 	public void setSpace(Space e, int row, int col) {
 		System.out.println("Set space " + row + ", " + col + " to " + e.getName());
 		_spaces[row][col] = e;
 	}
 	
+	/**
+	 * Get Space enum at given index
+	 * 
+	 * @param row 	Row to access
+	 * @param col 	Column to access
+	 * @return		Space enum of element at row, column
+	 */
 	public Space getSpace(int row, int col) {return _spaces[row][col];}
+	
 	
 	public void printSpaces() {
 		for(int r = 0; r < _spaces.length; r++) {
@@ -82,25 +97,17 @@ public class MazeArray {
 			}
 			System.out.println();
 		}
-		System.out.println("\n\n\n\n");
 	}
 	
 	
-	
-//	public void clearPlayer() {
-//		for(int r = 0; r < _spaces.length; r++) {
-//			for(int c = 0; c < _spaces[0].length; c++) {
-//				if(_spaces[r][c] == Space.PLAYER) {
-//					_spaces[r][c] = Space.AIR;
-//				}
-//			}
-//		}
-//			
-//	}
-	
+	/**
+	 * Play a full round given a player input of direction,
+	 * move player, then minotaur
+	 * 
+	 * @param d Direction enum of player movement
+	 */
 	public void playRound(Direction d) {
 			if(movePlayer(d)) {
-				System.out.println("pp");
 				checkCollisions();
 				if(!Grid.getInstance().getDead()) {
 					_minoList.moveMinotaurs();
@@ -109,6 +116,9 @@ public class MazeArray {
 			}
 	}
 	
+	/**
+	 * Check all possible collisions between player and other objects
+	 */
 	private void checkCollisions() {
 		checkExit();
 		checkSword();
@@ -118,6 +128,10 @@ public class MazeArray {
 		checkMinotaurs();
 	}
 	
+	/**
+	 * Check if any minotaurs are on the same space as the player
+	 * If so, kill player if no sword, kill minotaur if sword, and 50% chance of sword break on killing minotaur
+	 */
 	private void checkMinotaurs() {
 		if(_minoList.checkMinotaurList()) {
 			if(_p.hasSword()) {
@@ -132,11 +146,17 @@ public class MazeArray {
 		}
 	}
 	
+	/**
+	 * On sword break, update player's state and notify the user
+	 */
 	private void breakSword() {
 		_p.takeSword();
 		Grid.getInstance().getController().updateGameLabel("The rock cracks in two, you're left empty-handed");
 	}
 	
+	/**
+	 * If player on the same space as the exit, player wins, notify user and deny any more input (dead)
+	 */
 	private void checkExit() {
 		if(getSpace(_p.getRow(), _p.getCol()) == Space.EXIT) {
 			Grid.getInstance().getController().updateGameLabel("You clamber through the opening in the wall, free from the grim caverns");
@@ -144,6 +164,9 @@ public class MazeArray {
 		}
 	}
 	
+	/**
+	 * If player is on same space as a sword, give them a sword, unless they already have one
+	 */
 	private void checkSword() {
 		if(getSpace(_p.getRow(), _p.getCol()) == Space.WEAPON && !_p.hasSword()) {
 			_p.giveSword();
@@ -155,6 +178,9 @@ public class MazeArray {
 		}
 	}
 	
+	/**
+	 * If player is on the same space as a key, give them a key, unless they already have one
+	 */
 	private void checkKey() {
 		if(getSpace(_p.getRow(), _p.getCol()) == Space.KEY && !_p.hasKey()) {
 			_p.giveKey();
@@ -165,6 +191,9 @@ public class MazeArray {
 			Grid.getInstance().getController().updateGameLabel("You already have a " + Space.KEY.getName().toLowerCase());
 		}
 	}
+	/**
+	 * If player is on the same space as a torch, give them one, unless they already have
+	 */
 	private void checkTorch() {
 		if(getSpace(_p.getRow(), _p.getCol()) == Space.TORCH && !_p.hasBoots()) {
 			_p.giveBoots();
@@ -176,6 +205,9 @@ public class MazeArray {
 		}
 	}
 	
+	/**
+	 * If player attempts to move to same space as door, open door and notify user
+	 */
 	private void checkDoor() {
 		if(getSpace(_p.getRow(), _p.getCol()) == Space.DOOR) {
 			setSpace(Space.AIR, _p.getRow(), _p.getCol());
@@ -183,16 +215,27 @@ public class MazeArray {
 		}
 	}
 	
+	/**
+	 * Kill the minotaur on the same space as the player and notify user
+	 */
 	private void killMinotaur() {
 		_minoList.removeAtPosition(_p.getRow(), _p.getCol());
 		Grid.getInstance().getController().updateGameLabel("You bash in the " + Space.ENEMY.getName().toLowerCase() + "'s skull with a rock, it lies dead on the floor");
 	}
 	
+	/**
+	 * Notify user on minotaur killing player
+	 */
 	private void playMinotaurDeath() {
 		Grid.getInstance().setDead(true);
 		Grid.getInstance().getController().updateGameLabel("A " + Space.ENEMY.getName().toLowerCase() + " strikes at your leg, fatally wounding you");
 	}
 	
+	/**
+	 * Move player character based on user input
+	 * @param d Direction enum to move
+	 * @return true if move successful, false otherwise
+	 */
 	private boolean movePlayer(Direction d) {
 		updateInstance();
 		if(d == Direction.UP) {
